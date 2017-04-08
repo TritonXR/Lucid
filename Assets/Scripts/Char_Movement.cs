@@ -42,7 +42,7 @@ public class Char_Movement : MonoBehaviour
             touchY = touchPos.y - 0.5F;
 
             controller.SimpleMove(forward * speed * touchY * -1);
-            controller.SimpleMove(right * speed * touchX);
+            controller.SimpleMove(right * speed * touchX * 0.5f);
         }
     }
 }
