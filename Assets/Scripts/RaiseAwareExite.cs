@@ -6,6 +6,9 @@ public class RaiseAwareExite : MonoBehaviour {
 
     public float awareness;
     public float excitement;
+	public float awarenessRate = 0.1f;
+	public float excitementRate = 1.01f;
+	public float blurRate = 0.01f;
 
     GameObject mainCamera;
 
@@ -25,13 +28,13 @@ public class RaiseAwareExite : MonoBehaviour {
         {
             AwarenessObj p = hit.collider.GetComponent<AwarenessObj>();
             if(p != null) {
-                awareness = awareness + 0.7f;
-                excitement = excitement * 1.01f;
+				awareness = awareness + awarenessRate;
+				excitement = excitement * excitementRate;
             }
         }
         if(awareness >= 20f)
         {
-            mainCamera.GetComponent<DepthOfField>().aperture -= .05f;
+            mainCamera.GetComponent<DepthOfField>().aperture -= blurRate;
         }
 	}
 }
