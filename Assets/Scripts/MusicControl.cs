@@ -21,14 +21,15 @@ public class MusicControl : MonoBehaviour {
         m_TransitionOut = m_QuarterNote * 32;
 	}
 	
-    void onTriggerEvent(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("HallwayTileFloorTag"))
-        {
-            Hallway.TransitionTo(m_TransitionIn);
-        } else if (other.CompareTag("LibraryTag"))
+        if (other.CompareTag("LibraryTag"))
         {
             Library.TransitionTo(m_TransitionIn);
         }
     }
+
+	void OnTriggerExit(Collider other) {
+		Hallway.TransitionTo (m_TransitionOut);
+	}
 }

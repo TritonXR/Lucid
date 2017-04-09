@@ -30,6 +30,8 @@ public class Char_Movement : MonoBehaviour
         Vector2 touchPos;
         float touchX, touchY;
 
+		//this.transform.localRotation = Quaternion.AngleAxis (vrHead.rotation.x, this.transform.up);
+
         // In the Google VR button press
         if (GvrController.IsTouching)
         {
