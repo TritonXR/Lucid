@@ -30,7 +30,6 @@ public class doorOpenClose : MonoBehaviour {
 
     void OnTriggerStay()
     {
-        Debug.Log("entered trigger");
         if(isOpen == 0)
         {
             if(GvrController.AppButtonDown)
