@@ -13,6 +13,11 @@ public class Char_Movement : MonoBehaviour
     // VR Head
     private Transform vrHead;
 
+    float firstTime;
+
+    public GameObject hand;
+
+
     // Use this for initialization
     void Start()
     {
@@ -22,6 +27,8 @@ public class Char_Movement : MonoBehaviour
         gvrViewer = transform.GetChild(0).GetComponent<GvrViewer>();
         // Fnd the VR Head
         vrHead = Camera.main.transform;
+
+        firstTime = Time.time;
     }
 
     // Update is called once per frame
@@ -30,13 +37,23 @@ public class Char_Movement : MonoBehaviour
         Vector2 touchPos;
         float touchX, touchY;
 
-		//this.transform.localRotation = Quaternion.AngleAxis (vrHead.rotation.x, this.transform.up);
-
         // In the Google VR button press
         if (GvrController.IsTouching)
         {
-            touchPos = GvrController.TouchPos;
+            Ray myRay = new Ray(hand.transform.position, hand.transform.forward);
+            RaycastHit rayHit;
+            if (Physics.Raycast(myRay, out rayHit, Mathf.Infinity))
+            {
+                if (rayHit.collider.CompareTag("HallwayTileFloorTag") || rayHit.collider.CompareTag("LibraryTag"))
+                {
+                    Vector3 forward = hand.transform.forward;
+                    Vector3 right = hand.transform.right;
+                    controller.SimpleMove(forward * speed);
+                    controller.SimpleMove(right * speed * 0.5f);
+                }
+            }
 
+            /* touchPos = GvrController.TouchPos;
             Vector3 forward = vrHead.TransformDirection(Vector3.forward);
             Vector3 right = vrHead.TransformDirection(Vector3.right);
 
@@ -45,6 +62,13 @@ public class Char_Movement : MonoBehaviour
 
             controller.SimpleMove(forward * speed * touchY * -1);
             controller.SimpleMove(right * speed * touchX * 0.5f);
+            */
+
+            if (Time.time >= firstTime + 0.5)
+            {
+                GetComponent<AudioSource>().Play();
+                firstTime = Time.time;
+            }
         }
     }
 }
