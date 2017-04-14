@@ -30,8 +30,8 @@ public class LucidTeleportation : MonoBehaviour
         {
             if (rayHit.collider.CompareTag("HallwayTileFloorTag") || rayHit.collider.CompareTag("LibraryTag"))
             {
-                teleIndicator.SetActive(true);
-                teleIndicator.transform.position = new Vector3(rayHit.point.x, teleIndicator.transform.position.y, rayHit.point.z);
+               // teleIndicator.SetActive(true);
+                //teleIndicator.transform.position = new Vector3(rayHit.point.x, teleIndicator.transform.position.y, rayHit.point.z);
                 //Teleports by pointing controller laser at ground and pressing touchpad button 
                 if (GvrController.ClickButtonDown)
                 {
@@ -40,7 +40,7 @@ public class LucidTeleportation : MonoBehaviour
                 }
                 
             }
-            else teleIndicator.SetActive(false);
+            //else teleIndicator.SetActive(false);
         }
     }
 }

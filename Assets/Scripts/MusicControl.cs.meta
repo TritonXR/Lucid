@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 guid: fc3a121ba6720544d9164ebd304c994c
-timeCreated: 1488706893
+timeCreated: 1492148765
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Hallway: {fileID: 24500003, guid: d7aa2e7cc455a7b47a06a995b01ded2b, type: 2}
+  - Library: {fileID: 245000011285114946, guid: d7aa2e7cc455a7b47a06a995b01ded2b,
+      type: 2}
+  - stingSource: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

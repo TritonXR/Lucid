@@ -17,19 +17,22 @@ public class MusicControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         m_QuarterNote = 60 / bpm;
-        m_TransitionIn = m_QuarterNote;
-        m_TransitionOut = m_QuarterNote * 32;
+        m_TransitionIn = m_QuarterNote * 3;
+        m_TransitionOut = m_QuarterNote * 3;
 	}
 	
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider c)
     {
-        if (other.CompareTag("LibraryTag"))
+        if (c.CompareTag("LibraryTag"))
         {
             Library.TransitionTo(m_TransitionIn);
         }
     }
 
-	void OnTriggerExit(Collider other) {
-		Hallway.TransitionTo (m_TransitionOut);
+	void OnTriggerExit(Collider c) {
+        if (c.CompareTag("LibraryTag"))
+        {
+            Hallway.TransitionTo(m_TransitionOut);
+        }
 	}
 }
