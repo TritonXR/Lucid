@@ -9,6 +9,7 @@ TagManager:
   - Light
   - SceneButton
   - MainCharacter
+  - Hand
   layers:
   - Default
   - TransparentFX

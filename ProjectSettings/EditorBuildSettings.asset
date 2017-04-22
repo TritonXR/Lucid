@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/SplashScreen.unity
+  - enabled: 1
     path: Assets/Start_Scene.unity
   - enabled: 1
     path: Assets/Hallway_10.unity

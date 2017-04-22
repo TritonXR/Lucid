@@ -877,6 +877,7 @@ MonoBehaviour:
   stings: []
   stingSource: {fileID: 0}
   bpm: 128
+  gaius: {fileID: 0}
 --- !u!114 &336599827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3263,7 +3264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c173f7c6a736fe469d4acc5b108d6d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joint: 0
+  joint: 1
   debugDrawTo: {fileID: 0}
 --- !u!1 &1265345384
 GameObject:
@@ -3534,6 +3535,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1422168469, guid: 463285ecd6702471a909ba810832bf0e, type: 2}
+      propertyPath: vrModeOnly
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 463285ecd6702471a909ba810832bf0e, type: 2}
   m_IsPrefabParent: 0
@@ -3694,13 +3699,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa952cbcc0eb13d4ca558b6da550ff55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchPoint: {fileID: 0}
-  material_idle: {fileID: 0}
-  material_app: {fileID: 0}
-  material_system: {fileID: 0}
-  material_touchpad: {fileID: 0}
-  touchTransparent: {fileID: 0}
-  touchOpaque: {fileID: 0}
+  touchPoint: {fileID: 477961643}
+  material_idle: {fileID: 2100000, guid: 3b4f6031d569a624ba87b631c93a788a, type: 2}
+  material_app: {fileID: 2100000, guid: 3fe59d3fe0697b84196c28c184197906, type: 2}
+  material_system: {fileID: 2100000, guid: 6c9fcd230d4724c40af9e27326dc25f1, type: 2}
+  material_touchpad: {fileID: 2100000, guid: a89bc9f2db5f60743a95275d0336b6c2, type: 2}
+  touchTransparent: {fileID: 2100000, guid: 089662c06964d614db131b6b344431e4, type: 2}
+  touchOpaque: {fileID: 2100000, guid: 7bc1b31ae424a1448b1be6be3707ad31, type: 2}
 --- !u!23 &1536950878
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4252,7 +4257,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1761449639}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de984db72f7c55f46881bce22f143771, type: 3}
   m_Name: 
@@ -4547,6 +4552,7 @@ GameObject:
   - 114: {fileID: 2139692709}
   - 114: {fileID: 2139692708}
   - 120: {fileID: 2139692707}
+  - 114: {fileID: 2139692710}
   m_Layer: 2
   m_Name: Laser
   m_TagString: Untagged
@@ -4642,3 +4648,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joint: 0
   debugDrawTo: {fileID: 0}
+--- !u!114 &2139692710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2139692705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7dcc90c2e60c4011896c7f21fc1f557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reticleSegments: 20
+  reticleGrowthSpeed: 8

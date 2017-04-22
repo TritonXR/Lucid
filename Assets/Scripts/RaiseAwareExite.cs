@@ -35,13 +35,11 @@ public class RaiseAwareExite : MonoBehaviour {
         }
         if(awareness >= 0f) // 20f)
         {
-            GetComponent<AudioSource>().Play();
+            //GetComponent<AudioSource>().Play();
             if (awarenessBlur.transform.localScale.x < 2000)
             {
                 awarenessBlur.transform.localScale = awarenessBlur.transform.localScale * 1.03f;
             }
-            
-            //mainCamera.GetComponent<DepthOfField>().aperture -= blurRate;
         }
         
 

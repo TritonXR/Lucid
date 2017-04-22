@@ -3,51 +3,86 @@ using System.Collections;
 using UnityEngine.Audio;
 
 public class GaiusTutorial : MonoBehaviour {
-    public string playerLocation { get; private set; }
-    public int beckonNumber = 1;
+    public int beckonNumber = 0;
+    int isPlaying;
     private float t;
-    public AudioClip[] stings;
-    public AudioSource audio;
-    public AudioClip beckon1;
-    public AudioClip beckon2;
-    public AudioClip beckon3;
+    public AudioSource[] audio;
+    public bool library;
+    bool tutorial;
+    bool tutorial1;
+    bool tutorial2;
+    public float delay;
 
     // Use this for initialization
     void Start () {
-        playerLocation = "hallway";
         t = Time.time;
-        audio = GetComponent<AudioSource>();
+        audio = GetComponents<AudioSource>();
+        library = false;
+        tutorial = false;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (Time.time > t + 18f)  // beckon every 18 seconds
+        if (!library)
         {
-            switch (beckonNumber)
+            if (Time.time > t + delay)  // beckon every 18 seconds
             {
-                case 1:
-                    audio.clip = beckon1;
-                    break;
-
-                case 2:
-                    audio.clip = beckon2;
-                    break;
-                case 3:
-                    audio.clip = beckon3;
-                    beckonNumber = 0;  // reset to start
-                    break;
+                audio[beckonNumber].Play();
+                t = Time.time;
+                if (beckonNumber < 2)
+                    beckonNumber++;
+                else beckonNumber = 0;
             }
-            audio.Play();
-            t = Time.time;
-            beckonNumber++;
+        } else if(!tutorial)
+        {
+            if (Time.time > t + delay)  // beckon every 18 seconds
+            {
+                audio[beckonNumber].Play();
+                isPlaying = beckonNumber;
+                t = Time.time;
+                if (beckonNumber < 4)
+                    beckonNumber++;
+                else beckonNumber = 2;
+            }
+        } else if(tutorial && !audio[isPlaying].isPlaying)
+        {
+            float time = Time.time;
+            if (tutorial1)
+            {
+
+                audio[5].Play();
+                tutorial1 = false;
+
+            }
+            if (!audio[5].isPlaying)
+            {
+                if (GvrController.AppButtonDown || Time.time > time + 10f)
+                {
+                    tutorial2 = true;
+                }
+            }
+            if(tutorial2)
+            {
+                audio[6].Play();
+                tutorial2 = false;
+                tutorial = false;
+            }
+
+            
         }
+
 	}
 
     void OnTriggerEnter(Collider c)
     {
-        if (c.CompareTag("LibraryTag"))
+        if (c.CompareTag("MainCharacter"))
         {
-            playerLocation = "library";
+            if (!tutorial)
+            {
+                tutorial = true;
+                tutorial1 = true;
+            }
         }
     }
+
 }

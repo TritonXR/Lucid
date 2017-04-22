@@ -13,6 +13,8 @@ public class MusicControl : MonoBehaviour {
     private float m_TransitionOut;
     private float m_QuarterNote;
 
+    public GameObject gaius;
+
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +28,8 @@ public class MusicControl : MonoBehaviour {
         if (c.CompareTag("LibraryTag"))
         {
             Library.TransitionTo(m_TransitionIn);
+            gaius.GetComponent<GaiusTutorial>().library = true;
+            gaius.GetComponent<GaiusTutorial>().beckonNumber = 3;
         }
     }
 
@@ -33,6 +37,7 @@ public class MusicControl : MonoBehaviour {
         if (c.CompareTag("LibraryTag"))
         {
             Hallway.TransitionTo(m_TransitionOut);
+            gaius.GetComponent<GaiusTutorial>().enabled = false;
         }
 	}
 }

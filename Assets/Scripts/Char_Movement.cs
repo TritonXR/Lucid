@@ -17,6 +17,8 @@ public class Char_Movement : MonoBehaviour
 
     public GameObject hand;
 
+    float contSpeed;
+
 
     // Use this for initialization
     void Start()
@@ -37,9 +39,11 @@ public class Char_Movement : MonoBehaviour
         Vector2 touchPos;
         float touchX, touchY;
 
+
         // In the Google VR button press
         if (GvrController.IsTouching)
         {
+            /*
             Ray myRay = new Ray(hand.transform.position, hand.transform.forward);
             RaycastHit rayHit;
             if (Physics.Raycast(myRay, out rayHit, Mathf.Infinity))
@@ -52,17 +56,19 @@ public class Char_Movement : MonoBehaviour
                     controller.SimpleMove(right * speed * 0.5f);
                 }
             }
+            */
+            if (contSpeed < 5f)
+                contSpeed += 0.01f;
 
-            /* touchPos = GvrController.TouchPos;
+            touchPos = GvrController.TouchPos;
             Vector3 forward = vrHead.TransformDirection(Vector3.forward);
             Vector3 right = vrHead.TransformDirection(Vector3.right);
 
-            touchX = touchPos.x - 0.5F;
-            touchY = touchPos.y - 0.5F;
+            touchX = touchPos.x - 0.5f;
+            touchY = touchPos.y - 0.5f;
 
-            controller.SimpleMove(forward * speed * touchY * -1);
-            controller.SimpleMove(right * speed * touchX * 0.5f);
-            */
+            controller.SimpleMove(forward * speed * touchY * -1 * contSpeed);
+            controller.SimpleMove(right * speed * touchX * 0.5f * contSpeed);
 
             if (Time.time >= firstTime + 0.5)
             {
@@ -70,5 +76,6 @@ public class Char_Movement : MonoBehaviour
                 firstTime = Time.time;
             }
         }
+        else contSpeed = 0.5f;
     }
 }
