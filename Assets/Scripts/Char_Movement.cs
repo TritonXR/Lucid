@@ -5,7 +5,7 @@ using System.Collections;
 public class Char_Movement : MonoBehaviour
 {
     // How fast to move
-    public float speed = 7.0F;
+    public float speed = 3.0F;
     // CharacterController script
     private CharacterController controller;
     // GvrViewer Script
@@ -58,7 +58,7 @@ public class Char_Movement : MonoBehaviour
             }
             */
             if (contSpeed < 5f)
-                contSpeed += 0.01f;
+                contSpeed += 0.05f;
 
             touchPos = GvrController.TouchPos;
             Vector3 forward = vrHead.TransformDirection(Vector3.forward);

@@ -17,6 +17,7 @@ public class Pickupable : MonoBehaviour {
             if(holding)
             {
                 transform.SetParent(null);
+                GetComponent<Rigidbody>().useGravity = true;
             }
         }
 	}
@@ -28,6 +29,7 @@ public class Pickupable : MonoBehaviour {
             if(GvrController.AppButton)
             {
                 transform.SetParent(c.gameObject.transform);
+                GetComponent<Rigidbody>().useGravity = false;
                 holding = true;
             }
         }
