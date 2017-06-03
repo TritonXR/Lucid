@@ -81,6 +81,7 @@ public class GvrLaserPointer : GvrBasePointer {
     // Adjust transparency
     float alpha = GvrArmModel.Instance.alphaValue;
     lineRenderer.SetColors(Color.Lerp(Color.clear, laserColor, alpha), Color.clear);
+
   }
 #endif  // UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
 
@@ -114,15 +115,16 @@ public class GvrLaserPointer : GvrBasePointer {
     pointerIntersectionRay = intersectionRay;
     isPointerIntersecting = true;
 #endif  // UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
-  }
+    }
 
   public override void OnPointerHover(GameObject targetObject, Vector3 intersectionPosition,
       Ray intersectionRay, bool isInteractive) {
 #if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
     pointerIntersection = intersectionPosition;
     pointerIntersectionRay = intersectionRay;
+
 #endif  // UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
-  }
+    }
 
   public override void OnPointerExit(GameObject targetObject) {
 #if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)

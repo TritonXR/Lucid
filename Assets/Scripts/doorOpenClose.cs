@@ -25,12 +25,10 @@ public class doorOpenClose : MonoBehaviour {
             door.GetComponent<BoxCollider>().enabled = true;
             isOpen = afterAnim;
         }
-        if (GvrController.AppButtonDown) Debug.Log("app button pressed");
 	}
 
     void OnTriggerStay()
     {
-        Debug.Log("entered trigger");
         if(isOpen == 0)
         {
             if(GvrController.AppButtonDown)

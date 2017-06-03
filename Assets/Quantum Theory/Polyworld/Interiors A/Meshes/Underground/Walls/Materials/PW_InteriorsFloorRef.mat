@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: PW_InteriorsFloorRef
-  m_Shader: {fileID: 4800000, guid: 3d6bc97a29b0a264c8bf02b641c7af96, type: 3}
+  m_Shader: {fileID: 4800000, guid: 4c097e847a0b1ea4cb50af2fb83046ca, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -35,6 +35,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     - first:
         name: _DetailNormalMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _DiffuseIBL
       second:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -92,6 +98,9 @@ Material:
         name: _DstBlend
       second: 0
     - first:
+        name: _EMISSION
+      second: 0
+    - first:
         name: _GlossMapScale
       second: 1
     - first:
@@ -99,6 +108,9 @@ Material:
       second: 0.5
     - first:
         name: _GlossyReflections
+      second: 1
+    - first:
+        name: _IBLBrightness
       second: 1
     - first:
         name: _Metallic
@@ -115,6 +127,9 @@ Material:
     - first:
         name: _ReflectionAmount
       second: 0.129
+    - first:
+        name: _Smoothness
+      second: 1
     - first:
         name: _SmoothnessTextureChannel
       second: 0

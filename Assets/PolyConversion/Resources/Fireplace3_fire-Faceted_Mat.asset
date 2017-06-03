@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Fireplace3_fire-Faceted_Mat
-  m_Shader: {fileID: 4800000, guid: bf29ee44209c59c4092a8f492722daa9, type: 3}
+  m_Shader: {fileID: 4800000, guid: 4c097e847a0b1ea4cb50af2fb83046ca, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -15,5 +15,17 @@ Material:
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs: []
-    m_Floats: []
-    m_Colors: []
+    m_Floats:
+    - first:
+        name: _EMISSION
+      second: 0
+    - first:
+        name: _Metallic
+      second: 0
+    - first:
+        name: _Smoothness
+      second: 1
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 1, g: 1, b: 1, a: 0}
