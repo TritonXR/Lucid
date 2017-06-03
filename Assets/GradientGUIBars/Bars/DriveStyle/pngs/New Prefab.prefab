@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000013436078528}
+  m_IsPrefabParent: 1
+--- !u!1 &1000013436078528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012757901532}
+  - 114: {fileID: 114000013368622720}
+  - 114: {fileID: 114000010822039202}
+  m_Layer: 0
+  m_Name: New Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000012757901532
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013436078528}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &114000010822039202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013436078528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a0cee227fd04da28be3e5e7814798b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Value: 1
+  Fade: 0.01
+  GBS: {fileID: 114000013368622720}
+  Offset: {x: 70, y: 20}
+  LabelOffSet: {x: -55, y: -6}
+  playText: Play
+  IsPlaying: 0
+--- !u!114 &114000013368622720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013436078528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c95a157734574f82b4e53cba5dae53b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Value: 1
+  FadeFactor: 6
+  Position: {x: 10, y: 100}
+  ScaleSize: 1
+  DisplayText: 1
+  TextString: 100%
+  TextColor: {r: 0, g: 0, b: 0, a: 1}
+  OverRideTextColorWithGradient: 1
+  TextFont: {fileID: 12800000, guid: 240a102734c6045e1a3e91655501fa0a, type: 3}
+  TextSize: 30.8
+  TextOffset: {x: 6.7, y: 22}
+  Background: {fileID: 2800000, guid: b326f491919e545468afa87d3cf09454, type: 3}
+  Mask: {fileID: 2800000, guid: b326f491919e545468afa87d3cf09454, type: 3}
+  ValueBar: {fileID: 2800000, guid: fafa45e22f0dd46d096f86a3c1a2c52e, type: 3}
+  Foreground: {fileID: 2800000, guid: 440e0eeab8ea14e778cd0505a7cd573f, type: 3}
+  GradientColors:
+  - {r: 1, g: 1, b: 1, a: 0}
+  - {r: 0, g: 0.8758621, b: 1, a: 0}
+  - {r: 0, g: 0.37931037, b: 1, a: 0}
