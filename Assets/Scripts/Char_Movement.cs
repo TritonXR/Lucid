@@ -5,7 +5,7 @@ using System.Collections;
 public class Char_Movement : MonoBehaviour
 {
     // How fast to move
-    public float speed = 3.0F;
+    public float speed = 2.5F;
     // CharacterController script
     private CharacterController controller;
     // GvrViewer Script
@@ -57,7 +57,7 @@ public class Char_Movement : MonoBehaviour
                 }
             }
             */
-            if (contSpeed < 5f)
+            if (contSpeed < 3f)
                 contSpeed += 0.05f;
 
             touchPos = GvrController.TouchPos;

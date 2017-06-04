@@ -4,7 +4,7 @@ using UnityStandardAssets.ImageEffects;
 
 public class RaiseAwareExite : MonoBehaviour {
 
-    public float awareness;
+    public static float awareness;
     public float excitement;
 	public float awarenessRate = 0.1f;
 	public float excitementRate = 1.01f;
@@ -35,7 +35,6 @@ public class RaiseAwareExite : MonoBehaviour {
         }
         if(awareness >= 0f) // 20f)
         {
-            //GetComponent<AudioSource>().Play();
             if (awarenessBlur.transform.localScale.x < 2000)
             {
                 awarenessBlur.transform.localScale = awarenessBlur.transform.localScale * 1.03f;
