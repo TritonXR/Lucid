@@ -61,6 +61,8 @@ public class GaiusTutorial : MonoBehaviour {
             }
         } else if(tutorial && !audio[isPlaying].isPlaying)
         {
+            transform.LookAt(GameObject.FindGameObjectWithTag("MainCharacter").transform); // turns Gaius to look at the player
+            transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0); // prevent Gaius from falling over!
             if (tutorial1)
             {
                 audio[5].Play();

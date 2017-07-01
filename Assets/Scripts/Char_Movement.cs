@@ -5,7 +5,7 @@ using System.Collections;
 public class Char_Movement : MonoBehaviour
 {
     // How fast to move
-    public float speed = 2.5F;
+    public float speed = 1.2F;
     // CharacterController script
     private CharacterController controller;
     // GvrViewer Script
